@@ -1,0 +1,6 @@
+{
+    "version": "1.0.0",
+    "name": "distortionz_banking",
+    "download": "https://github.com/Distortionzz/distortionz_banking",
+    "changelog": "Initial custom Distortionz Banking release with Qbox support, premium NUI, deposits, withdrawals, transfers, transaction history, ox_target support, and Distortionz Notify integration."
+}

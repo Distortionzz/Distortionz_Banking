@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distortionz Banking</title>
+    <style>
+        html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; background: transparent !important; background-color: transparent !important; }
+        #bank-app { position: fixed; inset: 0; width: 100vw; height: 100vh; background: transparent !important; background-color: transparent !important; pointer-events: auto; }
+        .hidden { display: none !important; }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main id="bank-app" class="hidden">
+        <section class="bank-shell">
+            <aside class="sidebar">
+                <div class="brand">
+                    <div class="brand-icon">D</div>
+                    <div>
+                        <p class="eyebrow">Secure Terminal</p>
+                        <h1 id="bank-name">Distortionz Bank</h1>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <p class="label">Account Holder</p>
+                    <h2 id="player-name">Loading...</h2>
+                    <p id="player-cid" class="muted">CID: Loading...</p>
+                </div>
+
+                <div class="wallet-card">
+                    <p class="label">Wallet Cash</p>
+                    <h2 id="wallet-cash">$0</h2>
+                </div>
+
+                <div class="accounts-block">
+                    <div class="section-title">
+                        <span>Accounts</span>
+                    </div>
+
+                    <div id="accounts-list" class="accounts-list"></div>
+                </div>
+
+                <button id="close-btn" class="logout-btn">Close</button>
+            </aside>
+
+            <section class="content">
+                <header class="topbar">
+                    <div>
+                        <p class="eyebrow red">Banking Dashboard</p>
+                        <h2 id="welcome-text">Welcome back</h2>
+                    </div>
+
+                    <nav class="tabs">
+                        <button class="tab-btn active" data-tab="overview">Overview</button>
+                        <button class="tab-btn" data-tab="deposit">Deposit</button>
+                        <button class="tab-btn" data-tab="withdraw">Withdraw</button>
+                        <button class="tab-btn" data-tab="transfer">Transfer</button>
+                    </nav>
+                </header>
+
+                <section id="overview-tab" class="tab-page active">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <p>Total Bank Balance</p>
+                            <h3 id="stat-bank">$0</h3>
+                        </div>
+
+                        <div class="stat-card">
+                            <p>Available Cash</p>
+                            <h3 id="stat-cash">$0</h3>
+                        </div>
+
+                        <div class="stat-card">
+                            <p>Transactions</p>
+                            <h3 id="stat-transactions">0</h3>
+                        </div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-header">
+                            <div>
+                                <p class="eyebrow">Recent Activity</p>
+                                <h3>Transactions</h3>
+                            </div>
+
+                            <input id="transaction-search" class="search-input" placeholder="Search transactions..." />
+                        </div>
+
+                        <div id="transactions-list" class="transactions-list"></div>
+                    </div>
+                </section>
+
+                <section id="deposit-tab" class="tab-page">
+                    <div class="action-grid">
+                        <div class="action-panel">
+                            <p class="eyebrow red">Deposit Funds</p>
+                            <h3>Add cash to your bank account</h3>
+
+                            <label>Amount</label>
+                            <input id="deposit-amount" type="number" min="1" placeholder="Enter amount" />
+
+                            <label>Note</label>
+                            <input id="deposit-note" type="text" maxlength="120" placeholder="Optional note" />
+
+                            <button id="deposit-submit" class="primary-btn">Deposit</button>
+                        </div>
+
+                        <div class="info-panel">
+                            <h3>Deposit Info</h3>
+                            <p>Deposits move money from your wallet cash into your personal bank balance.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="withdraw-tab" class="tab-page">
+                    <div class="action-grid">
+                        <div class="action-panel">
+                            <p class="eyebrow red">Withdraw Funds</p>
+                            <h3>Take cash from your bank account</h3>
+
+                            <label>Amount</label>
+                            <input id="withdraw-amount" type="number" min="1" placeholder="Enter amount" />
+
+                            <label>Note</label>
+                            <input id="withdraw-note" type="text" maxlength="120" placeholder="Optional note" />
+
+                            <button id="withdraw-submit" class="warning-btn">Withdraw</button>
+                        </div>
+
+                        <div class="info-panel">
+                            <h3>Withdraw Info</h3>
+                            <p>Withdrawals move money from your personal bank balance into wallet cash.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="transfer-tab" class="tab-page">
+                    <div class="action-grid">
+                        <div class="action-panel">
+                            <p class="eyebrow red">Transfer Funds</p>
+                            <h3>Send money to another citizen</h3>
+
+                            <label>Citizen ID</label>
+                            <input id="transfer-cid" type="text" placeholder="Target citizen ID" />
+
+                            <label>Amount</label>
+                            <input id="transfer-amount" type="number" min="1" placeholder="Enter amount" />
+
+                            <label>Note</label>
+                            <input id="transfer-note" type="text" maxlength="120" placeholder="Optional note" />
+
+                            <button id="transfer-submit" class="primary-btn">Transfer</button>
+                        </div>
+
+                        <div class="info-panel">
+                            <h3>Transfer Info</h3>
+                            <p>Transfers currently require the target citizen to be online.</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
