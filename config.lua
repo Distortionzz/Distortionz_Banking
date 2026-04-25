@@ -6,7 +6,7 @@ Config.Script = {
 }
 
 Config.VersionCheck = {
-    enabled = false, -- turn true after you upload this repo to GitHub
+    enabled = true, -- turn true after you upload this repo to GitHub
     resourceName = 'distortionz_banking',
     currentVersion = '1.0.0',
     githubVersionUrl = 'https://raw.githubusercontent.com/Distortionzz/distortionz_banking/main/version.json'
