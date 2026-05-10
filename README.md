@@ -1,37 +1,41 @@
-# 🏦 Distortionz Banking
+# Distortionz Banking
 
-Premium custom Qbox banking system for Distortionz RP.
+> Premium custom banking system for Qbox/FiveM — deposits, withdrawals, transfers, transaction history, and a polished NUI tied to qbx_core money accounts.
 
-## ✨ Features
+![FiveM](https://img.shields.io/badge/FiveM-cerulean-yellow?style=flat-square&labelColor=181b20)
+![Qbox](https://img.shields.io/badge/Qbox-required-red?style=flat-square&labelColor=dfb317)
+![License](https://img.shields.io/badge/License-MIT-brightgreen?style=flat-square)
+![Version](https://img.shields.io/github/v/release/Distortionzz/distortionz_banking?style=flat-square&color=d4aa62&label=version)
 
-- Premium dark/red Distortionz Bank NUI
+---
+
+## Overview
+
+A hand-built replacement for default Qbox banking. Premium dark/red NUI with deposit / withdraw / transfer flows, transaction ledger persisted in MySQL, and ox_target ATM + bank counter integration.
+
+## Features
+
 - Personal bank account dashboard
-- Deposit cash into bank
-- Withdraw bank funds into cash
+- Deposit cash → bank
+- Withdraw bank → cash
 - Transfer to another online citizen by Citizen ID
-- Transaction history stored with oxmysql
-- ox_target bank and ATM interactions
-- `/bank` command support
+- Transaction history persisted via oxmysql
+- ox_target on bank counter + ATMs
+- `/bank` command
 - Distortionz Notify integration with ox_lib fallback
-- GitHub version checker support
+- GitHub version checker
 
-## 📦 Dependencies
+## Dependencies
 
-- qbx_core
-- ox_lib
-- oxmysql
-- ox_target recommended
-- distortionz_notify recommended
+| Resource | Required | Purpose |
+|---|---|---|
+| `qbx_core` | yes | Money accounts (cash / bank) |
+| `ox_lib` | yes | Callbacks, notify fallback |
+| `oxmysql` | yes | Transaction history |
+| `ox_target` | recommended | ATM + counter interactions |
+| `distortionz_notify` | optional | Branded notifications |
 
-## 📁 Install
-
-Place the resource here:
-
-```txt
-resources/[CustomScripts]/distortionz_banking
-```
-
-Add this to `server.cfg` after core resources:
+## Installation
 
 ```cfg
 ensure ox_lib
@@ -42,24 +46,23 @@ ensure distortionz_notify
 ensure distortionz_banking
 ```
 
-## 🗄️ SQL
+### SQL setup
 
-Run this once:
+Run the included migration once:
 
-```txt
+```
 sql/distortionz_banking.sql
 ```
 
-## ⚙️ Version Check
+## Configuration
 
-Version checking is disabled by default until the repository is uploaded.
+See [`config.lua`](config.lua) for ATM locations, bank counter peds, transaction limits, fee tiers.
 
-After uploading `version.json` to GitHub, set this in `config.lua`:
+## Credits
 
-```lua
-Config.VersionCheck.enabled = true
-```
+- **Author:** Distortionz
+- **Framework:** [Qbox Project](https://github.com/Qbox-project)
 
-## ✅ Status
+## License
 
-Initial v1.0.0 release.
+MIT — see [LICENSE](LICENSE).

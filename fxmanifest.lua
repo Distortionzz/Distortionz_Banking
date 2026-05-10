@@ -4,7 +4,7 @@ lua54 'yes'
 
 author 'Distortionz'
 description 'Premium custom Qbox banking system for Distortionz RP'
-version '1.0.0'
+version '1.0.1'
 repository 'https://github.com/Distortionzz/distortionz_banking'
 
 ui_page 'html/index.html'

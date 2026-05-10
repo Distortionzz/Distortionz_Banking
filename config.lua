@@ -2,7 +2,7 @@ Config = {}
 
 Config.Script = {
     name = 'Distortionz Banking',
-    version = '1.0.0'
+    version = '1.0.1'
 }
 
 Config.VersionCheck = {
@@ -10,7 +10,7 @@ Config.VersionCheck = {
     checkOnStart = true,
     url          = 'https://raw.githubusercontent.com/Distortionzz/distortionz_banking/main/version.json',
 }
-Config.CurrentVersion = '1.0.0'
+Config.CurrentVersion = '1.0.1'
 
 Config.BankName = 'Distortionz Bank'
 Config.Currency = 'USD'
