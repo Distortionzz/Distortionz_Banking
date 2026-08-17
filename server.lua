@@ -391,8 +391,9 @@ AddEventHandler('onResourceStart', function(resourceName)
         return
     end
 
-    print(('[distortionz_banking] Server loaded. Bank: %s | Version: %s'):format(
+    print(('^5[distortionz_banking]^7 ^2v%s loaded — bank=%s txLimit=%d^7'):format(
+        Config.Script and Config.Script.version or '1.0.0',
         Config.BankName or 'Distortionz Bank',
-        Config.Script and Config.Script.version or '1.0.0'
+        Config.TransactionLimit or 0
     ))
 end)
