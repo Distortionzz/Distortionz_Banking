@@ -10,4 +10,4 @@ CREATE TABLE IF NOT EXISTS `distortionz_banking_transactions` (
     PRIMARY KEY (`id`),
     INDEX `idx_citizenid` (`citizenid`),
     INDEX `idx_account_id` (`account_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
